@@ -9,7 +9,7 @@ int main() {
     // Nível Novato - Movimentação das Peças
     // Sugestão: Declare variáveis constantes para representar o número de casas que cada peça pode se mover.
 
-     int i; // variável de controle comum
+     int i, j; // variável de controle comum
 
     
     // TORRE - movimento horizontal (para a direita)
@@ -20,7 +20,7 @@ int main() {
     printf("Movimento da TORRE:\n");
 
     for (i = 1; i <= movimentoTorre; i++) {
-        printf("Direita (%d casa)\n", i);
+        printf("Direita\n", i);
     }
 
     printf("\n");
@@ -35,7 +35,7 @@ int main() {
     printf("Movimento do BISPO:\n");
 
     while (i <= movimentoBispo) {
-        printf("Cima, Direita (%d casa)\n", i);
+        printf("Cima, Direita\n", i);
         i++;
     }
 
@@ -50,16 +50,33 @@ int main() {
     printf("Movimento da RAINHA:\n");
 
     do {
-        printf("Esquerda (%d casa)\n", i);
+        printf("Esquerda\n", i);
         i++;
     } while (i <= movimentoRainha);
 
-    printf("\nFim da simulação!\n");
 
+    //CAVALO - move 2 casa para cima e 1 para direita ou esquerda
+    // Estrutura Aninhada: FOR e WHILE
 
-    // Nível Aventureiro - Movimentação do Cavalo
-    // Sugestão: Utilize loops aninhados para simular a movimentação do Cavalo em L.
-    // Um loop pode representar a movimentação horizontal e outro vertical.
+    printf("\nMovimento do CAVALO:\n");
+
+    int movimentoCima = 2;
+    int movimentoDireita = 1;
+
+    for (i = 1; i <= movimentoCima; i++) {
+        printf("Cima\n");
+
+        if(i == movimentoCima) {
+            j = 1;
+        while (j <= movimentoDireita) {
+
+            printf("Direita\n");
+            j++;
+
+            }
+        }
+    }
+
 
     // Nível Mestre - Funções Recursivas e Loops Aninhados
     // Sugestão: Substitua as movimentações das peças por funções recursivas.
